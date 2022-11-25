@@ -11,17 +11,19 @@ function App() {
   useEffect(getAdvice, []);
   return (
     <div className="App">
-      <main className="text">
-        {data && <p id="advice-id">Advice #{data.id}</p>}
-        <div className="advice">
-          {data && <h1 id="advice-content">{data.advice}</h1>}
+      <main>
+        <div className="text">
+          {data && <p id="advice-id">Advice #{data.id}</p>}
+          <div className="advice">
+            {data && <h1 id="advice-content">{data.advice}</h1>}
+          </div>
         </div>
-      </main>
-      <div id="divider"></div>
+        <div id="divider"></div>
 
-      <button aria-label="Advice" onClick={() => getAdvice()}>
-        <div className="img"></div>
-      </button>
+        <button aria-label="Advice" onClick={() => getAdvice()}>
+          <div className="img"></div>
+        </button>
+      </main>
     </div>
   );
 }
