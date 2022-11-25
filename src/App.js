@@ -11,15 +11,17 @@ function App() {
   useEffect(getAdvice, []);
   return (
     <div className="App">
-      <div className="text">
+      <main className="text">
         {data && <p id="advice-id">Advice #{data.id}</p>}
         <div className="advice">
           {data && <h1 id="advice-content">{data.advice}</h1>}
         </div>
-      </div>
+      </main>
       <div id="divider"></div>
 
-      <button onClick={() => getAdvice()}></button>
+      <button onClick={() => getAdvice()}>
+        <div className="img"></div>
+      </button>
     </div>
   );
 }
