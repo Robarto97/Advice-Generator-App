@@ -19,7 +19,7 @@ function App() {
       </main>
       <div id="divider"></div>
 
-      <button onClick={() => getAdvice()}>
+      <button aria-label="Advice" onClick={() => getAdvice()}>
         <div className="img"></div>
       </button>
     </div>
