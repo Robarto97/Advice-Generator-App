@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+$lightCyan: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+$grayishBlue: hsl(217, 19%, 38%);
+$darkGrayishBlue: hsl(217, 19%, 24%);
+$darkBlue: hsl(218, 23%, 16%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background-color: $darkBlue;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  width: 600px;
+  margin: 1rem;
+  min-height: 350px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: $darkGrayishBlue;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    min-height: 225px;
+    #advice-id {
+      color: $neonGreen;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-top: 1.25rem;
+    }
+    .advice {
+      flex-grow: 1;
+      position: relative;
+      width: 100%;
+      #advice-content {
+        color: $lightCyan;
+        quotes: "\201C""\201D";
+        font-size: 1.75rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+      #advice-content::after {
+        content: close-quote;
+      }
+      #advice-content::before {
+        content: open-quote;
+      }
+    }
+  }
+
+  #divider {
+    background-image: url(images/pattern-divider-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    margin-bottom: 2.5rem;
+  }
+  button {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: $neonGreen;
+    background-image: url(images/icon-dice.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -4rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 25px 0px $neonGreen;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .App {
+    width: calc(375px - 2rem);
+    margin: auto;
+    padding: 1.5rem 1.5rem;
+    .text {
+      #advice-id {
+        font-size: 0.75rem;
+      }
+      #advice-content {
+        font-size: 1.4rem;
+      }
+    }
+    #divider {
+      background-image: url(images/pattern-divider-mobile.svg);
+    }
+  }
+}
